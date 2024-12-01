@@ -7,7 +7,10 @@ public class FirstClass {
     // Below we are using the "main" method which is an entry point for any java code which java looks for to start and run the program.
     // static is java keyword and a part of the OOP concept which will be included in the later notes but it is essential in helping java find the method "main" or any other custom method
     // void is a java keyword used to indicated that the method will not return any values after executing.
+
     public static void main(String[] args) {
         System.out.print("Hello World");
     }
 }
+
+
