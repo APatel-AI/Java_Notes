@@ -5,10 +5,10 @@ public class ConditionalsPartOne {
     public static void main(String[] args){
         System.out.println("Hello, Arpan");
 
-        boolean isAlien = true; //isAlien is a variable with the assigned "=" boolean value "false"
+        boolean isAlien = false; //isAlien is a variable with the assigned "=" boolean value "false"
         if (isAlien == false){ // here we are checking if the value of the variable "isAlien" is indeed equal to "false" by using the comparison operation "==". 
             System.out.println("It is not an alien!"); // since the condition is true that isAlien is indeed false, the system will print "It is not an alien"
-            System.out.println("And I am scared of aliens :()");
+            System.out.println("And I am scared of aliens :(");
         } // without the start and end curly braces, a code block is not present
 
     }
