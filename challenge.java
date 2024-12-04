@@ -1,6 +1,6 @@
 
 
-public class remainders{
+public class challenge{
     public static void main(String[] args){
         double firstDoubleValue = 20.00;
         double secondDoubleValue = 80.00;
