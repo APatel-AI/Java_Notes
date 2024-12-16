@@ -36,7 +36,7 @@ public class Main{
         }
 
         //calling method
-        String month = "OCTOBER";
+        String month = "OCTBER";
         System.out.println(month + " is in the " + getQuarter(month) + " quarter") ;
 
     }
@@ -47,7 +47,10 @@ public class Main{
             case "APRIL", "MAY", "JUNE" -> "2nd";
             case "JULY", "AUGUST", "SEPTEMBER" -> "3rd";
             case "OCTOBER", "NOVEMBER", "DECEMBER" -> "4th";
-            default -> "bad";
+            default -> {
+                String badResponse = month + " is bad";
+                yield badResponse;
+            }
         };
     }
 }
