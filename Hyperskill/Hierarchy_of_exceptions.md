@@ -12,3 +12,23 @@ It occurs when a program attempts to use a variable with the null value. To avoi
 Here is one interesting fact about the concept of a null reference and errors associated with it. Not only is it not unique for Java, but in 2009, Tony Hoare, a British Computer Scientist who invented the concept of null reference, described it as a "billion-dollar mistake":
 
 
+## NPE when invoking a method
+Since `String` is a regular reference type, its variables can be `null`. If we invoke a method or apply an operation to such a variable, the code throws an NPE.
+
+In the following code, an uninitialized variable of String is created and then the method length() is invoked. The code throws an NPE because the object someString is actually null.
+
+
+```
+String someString = null; // a reference type can be null
+
+int size = someString.length(); // NullPointerException (NPE)
+```
+
+The same exception will occur if we use uninitialized variables of any other reference type, not only `String`.
+
+
+To avoid the exception we should explicitly check whether a string is `null` or not and depending on the result perform different code. It's similar to the default value.
+
+```
+int size = someString != null ? someString.length() : 0; // if the string is null, the size is 0
+```
