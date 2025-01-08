@@ -25,3 +25,56 @@ Below you can see a list of some important differences between these two concept
 - in an abstract class, the keyword abstract is mandatory to declare a method as an abstract one while in an interface this keyword is optional.
 
 ## a class extends another class, a class implements an interface, but an interface extends another interface.
+
+## Using abstract classes and interfaces together
+Sometimes interfaces and abstract classes are used together to make a class hierarchy more flexible. In this case, an abstract class contains common members and implements one or multiple interfaces, and concrete classes extend the abstract class and possibly implement other interfaces.
+
+## Example
+```
+interface ManagedDevice {
+
+    void on();
+
+    void off();
+}
+
+abstract class AbstractDevice implements ManagedDevice {
+
+    protected String serialNumber;
+    protected boolean on;
+    
+    public AbstractDevice(String serialNumber) {
+        this.serialNumber = serialNumber;
+    }
+
+    protected void setOn(boolean on) {
+        this.on = on;
+    }
+}
+
+class Kettle extends AbstractDevice {
+
+    protected double volume;
+
+    public Kettle(String serialNumber, double volume) {
+        super(serialNumber);
+        this.volume = volume;
+    }
+
+    @Override
+    public void on() {
+        // do complex logic to activate all electronic components
+        setOn(true);
+    }
+
+    @Override
+    public void off() {
+        // do complex logic to stop all electronic components
+        setOn(false);
+    }
+}
+```
+Using both concepts (interfaces and abstract classes) makes your code more flexible. Use suitable abstractions or their combination when designing your class hierarchies.
+
+As an example, you may see class hierarchies in the standard Java class library. An example of that is the collections hierarchy. It combines abstract classes and interfaces to make the hierarchy more maintainable and flexible to use in your code.
+
