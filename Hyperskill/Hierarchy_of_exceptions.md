@@ -27,8 +27,24 @@ int size = someString.length(); // NullPointerException (NPE)
 The same exception will occur if we use uninitialized variables of any other reference type, not only `String`.
 
 
+
 To avoid the exception we should explicitly check whether a string is `null` or not and depending on the result perform different code. It's similar to the default value.
 
 ```
 int size = someString != null ? someString.length() : 0; // if the string is null, the size is 0
 ```
+
+
+## Comparing Strings
+A very common situation occurs when we try to compare a `String` variable and a string literal.
+
+```
+String str = null;
+
+if (str.equals("abc")) { // it throws an NPE
+    System.out.println("The same");
+}
+```
+
+To avoid an NPE here we can use Yoda notation and call the equals method on the literal rather than the object:
+
