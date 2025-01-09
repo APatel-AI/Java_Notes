@@ -43,3 +43,28 @@ Class scannerArrayClass = Class.forName("[Ljava.util.Scanner;");
 
 The variable floatArrayClass will contain the Class corresponding to a one-dimensional array of primitive type float (the same as float[].class). The variable objectArrayClass in its turn will contain the Class corresponding to a two-dimensional array of Object. Note, that there should be a semicolon ; after an array of any objects.
 
+# Methods that return classes
+In addition to the methods we've described above, we can use some Reflection APIs to get classes. However, you should keep in mind that they can be used only if a Class has already been obtained.
+
+```
+// Returns the super class for the given class
+String.class.getSuperclass();
+
+// Returns all the public classes, interfaces, and enums that are members of the class
+String.class.getClasses();
+
+// Returns all of the classes, interfaces, and enums that are explicitly declared in this class.
+String.class.getDeclaredClasses();
+```
+
+# Getting class by name
+We have covered the two methods for obtaining a class by name. Let's sum up their pros and cons.
+
+The first way is getting a class directly, for instance String.class. It looks simple but means that we're aware of a class at the compile time.
+
+The second way is by using the method forName of Class, for instance Class.forName("java.lang.String"). This way works at runtime as well as it can be used when a target class name is resolved dynamically, for example, retrieved from a config.
+
+# Conclusion
+- aggregate = combine
+java.lang.Class aggregates all the information that describes a given type. That is the reason why it is important to know ways of getting an instance of the class. If a class name is known, there are two ways of getting an instance of java.lang.Class: calling ClassName.class directly or getting Class.forName("package.ClassName"). The alternative ways are based on having a reference to a class. For example, if you have an object, you can obtain its class as well.
+
