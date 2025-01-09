@@ -68,3 +68,20 @@ The second way is by using the method forName of Class, for instance Class.forNa
 - aggregate = combine
 java.lang.Class aggregates all the information that describes a given type. That is the reason why it is important to know ways of getting an instance of the class. If a class name is known, there are two ways of getting an instance of java.lang.Class: calling ClassName.class directly or getting Class.forName("package.ClassName"). The alternative ways are based on having a reference to a class. For example, if you have an object, you can obtain its class as well.
 
+# Work Notes
+## Retrieve class name:
+```
+/**
+ Get name of the class for the object provided.
+ */
+class ClassGetter {
+
+    public String getObjectClassName(Object object) {
+        // Add implementation here
+        return object.getClass().getName();
+    }
+
+}
+```
+- getClass(): get the Class object representing the class of an object using the getClass() method.
+
