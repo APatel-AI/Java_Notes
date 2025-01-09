@@ -33,3 +33,21 @@ To verify that the installation has been completed correctly, run the following 
 The result should look similiar to:
 `Gradle 5.6.4`
 
+Completing a basic Gradle build script
+```
+plugins {
+    id 'java'
+}
+
+group 'com.example.gradletest'
+version '1.0-SNAPSHOT'
+
+ task hello {
+    
+ doLast{
+        
+ println'Hello, Gradle world!'
+    }
+}
+```
+
